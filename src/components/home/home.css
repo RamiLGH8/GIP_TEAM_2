@@ -1,0 +1,27 @@
+#home {
+    background-image: url("../../../assets/background.png");
+    height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+.home-content h1{
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+}
+.home-content-paragraph{
+    width: 50%;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    text-align:justify;
+}

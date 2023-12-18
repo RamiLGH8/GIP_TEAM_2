@@ -1,14 +1,23 @@
 import React from "react";
 import './home.css';
-import Navigationbar from "../navbar/Navbar";
 
 export const Home = () => {
   return (
     <>
-    <Navigationbar />
-    <div className="home">
-      <h1>Home</h1>
-    </div>
+      <div id="home">
+         <div className="home-content">
+            <h1>Welcome to the Dash Spetial Event</h1>
+            <div className="home-content-paragraph">
+            Get ready for a fluttering good time as we invite you to the most exciting event of the year - the 🎉 FlutterFest Celebration!
+             🚀 with Dash! Join us for a day filled with code, creativity, and community as Dash, the vibrant mascot of Flutter, takes center 
+             stage to celebrate the power of open-source development.
+            </div>
+            <div className="home-content-buttons">
+                 <button>Join Us</button>
+                 <button>Learn More</button>
+            </div>
+         </div>
+      </div>  
     </>
   );
 }

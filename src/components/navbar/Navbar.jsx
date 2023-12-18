@@ -5,23 +5,20 @@ import '../navbar/navbar.css'
 function Navigationbar() {
 
     return (
-      <>
-      {/* Desktop navbar */}
+      
      <div className='d-none d-lg-block'>
-      <Navbar style={{zIndex: "1", position:"fixed",top:"0",backgroundColor:'#020617',width:'100%'}}>
+      <Navbar style={{zIndex: "1", position:"fixed",top:"0",width:'100%',}}>
       <Container>
-        <Navbar.Brand href='#home' ><spam className='Rami'></spam ><span className='L'>L.</span></Navbar.Brand>
-        <Nav className="me-auto" style={{marginLeft:'auto'}}>
+        <Navbar.Brand href='#home' ><img src='logo.png' alt='' style={{height:'51px',width:'375px'}}></img></Navbar.Brand>
+        <Nav className="me-auto" style={{marginLeft:'50%'}}>
           <Nav.Link href="#home" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}>Home</Nav.Link>
-          <Nav.Link href="#about" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}>About</Nav.Link>
-          <Nav.Link href="#projects" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}>Projects</Nav.Link>
-          <Nav.Link href="#contact" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}>Contact</Nav.Link>
+          <Nav.Link href="#details" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}>Details</Nav.Link>
+          <Nav.Link href="#register" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}><button>Register</button></Nav.Link>
         </Nav>
       </Container>
     </Navbar>
     </div>
    
-    </>
     );
   }
   
