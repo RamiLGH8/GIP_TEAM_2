@@ -1,6 +1,10 @@
 #home {
-    background-image: url("../../../assets/background.png");
+    background-image: url("../../../assets/Welcome_home.png");
     height: 100vh;
+    width: 100vw;
+    background-size: cover; /* This ensures the image covers the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
     padding-top: 100px;
     display: flex;
     justify-self: center;
