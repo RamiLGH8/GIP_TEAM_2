@@ -1,33 +1,47 @@
 const express = require("express");
-const collection = require("./config");
+const collection = require("./src/config");
 const mailer = require("nodemailer");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000/' // replace with your frontend domain
+}));
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 
-app.post("/register",async(req,res)=>{ 
-
+app.post("/register", async (req, res) => {
     const data = {
-      name:req.body.name,
-      email:req.body.email,
-      num:req.body.num
-    }
+        name: req.body.name,
+        email: req.body.email,
+        num: req.body.num,
+    };
     console.log(data);
-    const userdata= await collection.insertMany(data);
-    console.log(userdata);
-    res.send("registered");
-   
-})
+
+    try {
+        // Check if the user already exists
+        const existingUser = await collection.findOne({ email: req.body.email });
+
+        // If a user with the same email exists , cbn
+        if (existingUser) {
+            return res.status(409).json({ error: "User already exists" });
+        }
+        // if the user is  new
+        const newUser = new collection(data);
+        // save it to the db
+        const savedUser = await newUser.save();
+        console.log("User saved successfully:", savedUser);
+        res.status(201).send("user registred ", savedUser);
+    }catch (error) {
+        console.error("Error ", error);
+        res.status(500).send('Server error');
+    }
+
+    // res.send("registered");
+});
 
 app.get("/send",async(req,res)=>{ 
    const result=await collection.find();
-   
-   
-   
-
 
    const transporter = mailer.createTransport({
     service:"gmail",
@@ -35,15 +49,15 @@ app.get("/send",async(req,res)=>{
     port: 465,
     secure: true,
     auth: {
-      user: "gdggiptest@gmail.com",
-      pass: "bpsz bhka kdue xibm",
+      user: "ly_korzane@esi.dz",
+      pass: "0665300362",
     },
   });
    result.map(async e=>{
   const id = await transporter.sendMail({
     from: {
         name: 'GDG',
-        address: 'gdggiptest@gmail.com'
+        address: 'ly_korzane@esi.dz'
     }, // sender address
     to: [e.email], // list of receivers
     subject: "Congratulations! You're In for FlutterFest Hackathon 🚀", // Subject line
@@ -82,7 +96,7 @@ res.json("success");
 
  )
 
-const port = "5000"
+const port = "3001"
 app.listen(port, ()=>{
   console.log("running on ... ");
 });
