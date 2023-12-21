@@ -9,11 +9,11 @@ function Navigationbar() {
      <div className='d-none d-lg-block'>
       <Navbar style={{zIndex: "1", position:"fixed",top:"0",width:'100%',}}>
       <Container>
-        <Navbar.Brand href='#home' ><img src='logo.png' alt='' style={{height:'51px',width:'375px'}}></img></Navbar.Brand>
-        <Nav className="me-auto" style={{marginLeft:'50%'}}>
+        <Navbar.Brand href='#home' ><img src='logo.png' alt='' style={{height:'51px',width:'310px'}}></img></Navbar.Brand>
+        <Nav className="me-auto" style={{marginLeft:'35%'}}>
           <Nav.Link href="#home" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}>Home</Nav.Link>
           <Nav.Link href="#details" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}>Details</Nav.Link>
-          <Nav.Link href="#register" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}><button>Register</button></Nav.Link>
+          <Nav.Link href="#register" style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}><button className='Register-Now'>Register</button></Nav.Link>
         </Nav>
       </Container>
     </Navbar>

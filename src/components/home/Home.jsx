@@ -13,8 +13,8 @@ export const Home = () => {
              stage to celebrate the power of open-source development.
             </div>
             <div className="home-content-buttons">
-                 <button>Join Us</button>
-                 <button>Learn More</button>
+                 <button className="join-us">Join Us</button>
+                 <button className="learn-more">Learn More</button>
             </div>
          </div>
       </div>  

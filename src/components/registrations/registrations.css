@@ -1,0 +1,56 @@
+#registrations{
+    background-image: url("../../../assets/Register.png");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover; /* This ensures the image covers the entire container */
+    background-position: center; 
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;/* Center the image */
+    background-repeat: no-repeat;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.form-element{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin-bottom: 24px;
+}
+h1{
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+}
+label{
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+input{
+    background-color: transparent; 
+    border: 1px solid #ffffff; 
+    padding: 10px;
+    color: #ffffff; 
+    border-radius: 2%;
+}
+.submit-button{
+    background-color: #7C8AEB;
+    color: #fff;
+    padding-right:40px;
+    padding-left: 40px;
+    border-radius: 5%;
+    border: 2px solid #fff;
+    font-size: 36px;
+    margin-left: 20px;
+    margin-top: 20px;
+}

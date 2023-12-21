@@ -1,7 +1,8 @@
 import React from "react";
 import './details.css';
-function Details(){
+export const  Details = () =>{
     return(
+       <> 
         <div className="details">
             <div className="details-content">
                 <h1>Welcome to the Dash Spetial Event</h1>
@@ -17,8 +18,9 @@ function Details(){
                 <p>🏆 Flutter Hackathon: Compete in the FlutterFest Hackathon for a chance to showcase your skills, win exciting prizes, and gain recognition from the Flutter community.</p>
                 </div>
             </div>
-            <img src="./flutterbirddetails.png" className="birdimg" />
         </div>
-    )
+       </> 
+    );
+
 }
 export default Details;
