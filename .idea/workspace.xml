@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1b54bf-e13b-4974-8006-27bfdd78cbb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="1d1b54bf-e13b-4974-8006-27bfdd78cbb0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +54,7 @@
       <updated>1703153409414</updated>
       <workItem from="1703153411250" duration="1107000" />
       <workItem from="1703155306100" duration="62000" />
-      <workItem from="1703166187954" duration="1514000" />
+      <workItem from="1703166187954" duration="1681000" />
     </task>
     <servers />
   </component>

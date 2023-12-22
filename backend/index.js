@@ -50,7 +50,7 @@ app.get("/send",async(req,res)=>{
     secure: true,
     auth: {
       user: "ly_korzane@esi.dz",
-      pass: "0665300362",
+      pass: "12345678",
     },
   });
    result.map(async e=>{
