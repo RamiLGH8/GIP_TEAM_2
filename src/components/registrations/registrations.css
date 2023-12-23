@@ -8,7 +8,7 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center;/* Center the image */
+    align-items: center;
     background-repeat: no-repeat;
 }
 
@@ -53,4 +53,15 @@ input{
     font-size: 36px;
     margin-left: 20px;
     margin-top: 20px;
+}
+@media screen and (max-width: 991px) {
+    .form-element{
+        width: 50%;
+    }
+    .submit-button{
+        font-size: 20px;
+    }
+    h1{
+        font-size: 2rem;
+    }
 }

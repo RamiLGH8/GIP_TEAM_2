@@ -55,3 +55,24 @@
     justify-content: center;
     width: 50%;
 }
+@media screen and (max-width: 991px) {
+    
+    .home-content-paragraph{
+        width: 80%;
+    }
+    .home-content-buttons{
+        width: 80%;
+    }
+    .home-content h1{
+        font-size: 2rem;
+    }
+    .home-content-paragraph{
+        font-size: 1rem;
+    }
+    .join-us{
+        font-size: 1rem;
+    }
+    .learn-more{
+        font-size: 1rem;
+    }
+}
