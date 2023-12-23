@@ -8,9 +8,9 @@ export const  Details = () =>{
                 <h1>Welcome to the Dash Spetial Event</h1>
                 <div className="details-content-paragraph">
                 <div className="date">
-                    <p>📅 Date: [Event Date]</p>
-                    <p>🕒 Time: [Event Time]</p>
-                    <p>📍 Location: [Event Venue]</p>
+                    <p>📅 Date: 25th december 2023</p>
+                    <p>🕒 Time: 09:00 AM</p>
+                    <p>📍 Location: Higher School Of Computer Science - Algiers</p>
                 </div>
                 <p>Highlights:</p>
                 <p>🎨 Code & Create Workshops: Engage in hands-on workshops led by Flutter experts. From beginner to advanced levels, these sessions will empower you to master Flutter development and unleash your creativity.</p>

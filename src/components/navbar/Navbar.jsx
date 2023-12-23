@@ -8,15 +8,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 function Navigationbar() {
   const [show, setShow] = useState(false);
-  const [display,setDisplay]=useState('none');
   
   const handleClose = () =>{ 
                    setShow(false);
-                   setDisplay('none');
                   };
   const handleShow = () =>{
                    setShow(true);
-                   setDisplay('block');  
                   }
 
     return (
@@ -24,7 +21,7 @@ function Navigationbar() {
      <div className='d-none d-lg-block'>
       <Navbar style={{zIndex: "1", position:"fixed",top:"0",width:'100%',}}>
       <Container>
-        <Navbar.Brand href='#home' ><img src='logo.png' alt='' style={{height:'51px',width:'310px'}}></img></Navbar.Brand>
+        <Navbar.Brand href='/' ><img src='logo.png' alt='' style={{height:'51px',width:'310px'}}></img></Navbar.Brand>
         <Nav className="me-auto" style={{marginLeft:'35%'}}>
                   <Nav.Link 
                           href="/"   
@@ -40,11 +37,14 @@ function Navigationbar() {
                           href="/register"
                           style={{color:'#FFFFFF' ,marginRight:'20px',fontSize:'20px'}}><button className='Register-Now'>Register</button></Nav.Link>
         </Nav>
+        </Container>
+    </Navbar>
+       </div> 
          {/* Mobile navbar */}
     <div className='d-lg-none'>
       <Nav style={{position:'fixed',top:'0', width:'100%',display:'flex',}}>
         <Nav.Item style={{marginRight:'auto',height:'90px',display:'flex',alignItems:'center',marginLeft:'10px'}}>
-        <Navbar.Brand href='#home' style={{width:'100px'}} ><img src='logo.png' alt='' style={{height:'51px',width:'310px'}}></img></Navbar.Brand>
+        <Navbar.Brand href='/' style={{width:'100px'}} ><img src='logo.png' alt='' style={{height:'51px',width:'310px'}}></img></Navbar.Brand>
         
         </Nav.Item>
         { <Nav.Item style={{display:'flex',alignItems:'center',marginRight:'10px'}}>
@@ -53,7 +53,7 @@ function Navigationbar() {
         </btn>
         </Nav.Item> }
 {       
-      <Offcanvas style={{display:display}} show={show} onHide={handleClose} placement='end'>
+      <Offcanvas  show={show} onHide={handleClose} placement='end'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
@@ -65,9 +65,7 @@ function Navigationbar() {
       </Offcanvas> }
       </Nav>
       </div>
-      </Container>
-    </Navbar>
-    </div>
+     
    </>
     );
   }
