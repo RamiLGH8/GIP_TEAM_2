@@ -5,7 +5,7 @@ export const Registrations = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phoneNumber: '',
+        num: '',
       });
     
       const handleChange = (e) => {
@@ -16,10 +16,26 @@ export const Registrations = () => {
         });
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+      
+        try {
+          let res = await fetch("http://localhost:5000/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name: formData.name, email: formData.email, num: formData.num }),
+          });
+      
+          if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+          }
+        } catch (error) {
+          console.error("Error during fetch:", error.message);
+        }
       };
+      
     
     return(
         <>
@@ -50,12 +66,12 @@ export const Registrations = () => {
                      />
             </div>
             <div className="form-element">
-              <label htmlFor="phoneNumber">Phone Number</label>
+              <label htmlFor="num">Phone Number</label>
                  <input
                     type="tel"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
+                    id="num"
+                    name="num"
+                    value={formData.num}
                     onChange={handleChange}
                      />
             </div>

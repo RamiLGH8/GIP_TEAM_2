@@ -1,8 +1,10 @@
 const express = require("express");
 const collection = require("./config");
 const mailer = require("nodemailer");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
@@ -16,13 +18,14 @@ app.post("/register",async(req,res)=>{
     console.log(data);
     const userdata= await collection.insertMany(data);
     console.log(userdata);
+    res.send("registered");
    
 })
 
 app.get("/send",async(req,res)=>{ 
    const result=await collection.find();
-   let mails=[];
-   mails.push("pp");
+   
+   
    
 
 
@@ -36,18 +39,19 @@ app.get("/send",async(req,res)=>{
       pass: "bpsz bhka kdue xibm",
     },
   });
-  const info = await transporter.sendMail({
+   result.map(async e=>{
+  const id = await transporter.sendMail({
     from: {
         name: 'GDG',
         address: 'gdggiptest@gmail.com'
     }, // sender address
-    to: ["meliouhmedmahdi@gmail.com"], // list of receivers
+    to: [e.email], // list of receivers
     subject: "Congratulations! You're In for FlutterFest Hackathon 🚀", // Subject line
     html: `
         <div style="font-family: 'Arial', sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; color: #333;">
             <div style="max-width: 600px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
                 <h1 style="color: #4CAF50;">Congratulations! You're In for FlutterFest Hackathon 🚀</h1>
-                <p>Dear [Hackathon Participant's Name],</p>
+                <p>Dear ${e.name},</p>
                 <p>We're thrilled to share the exciting news – your application to participate in the FlutterFest Hackathon has been accepted! Congratulations on securing your spot for this dynamic event! 🎉</p>
                 
                 <div style="margin-top: 20px;">
@@ -72,13 +76,13 @@ app.get("/send",async(req,res)=>{
             </div>
         </div>
     `,
-});
-res.json(info.messageId);
+});})
+res.json("success");
 }
 
  )
 
-const port = "3000"
+const port = "5000"
 app.listen(port, ()=>{
   console.log("running on ... ");
 });
